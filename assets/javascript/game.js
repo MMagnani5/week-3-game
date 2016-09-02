@@ -1,37 +1,96 @@
-// Create a word list
-	var wordList = ["mantle", "ruth", "yogi", "jeter"];
+window.onload = function () {
 
-	var word = wordList[Math.floor(Math.random()* wordList.length)];
-	console.log("The word to guess is: " + word);
-	var answerArray = [];
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  
+  var categories;         // Array of topics
+  var chosenCategory;     // Selected category
+  var getHint ;          // Word getHint
+  var word ;              // Selected word
+  var guess ;             // Guess
+  var guesses = [ ];      // Stored guesses
+  var lives ;             // Lives
+  var counter ;           // Count correct guesses
+  var space;              // Number of spaces in word '-'
 
-document.onkeyup = function(event) {
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-	var guessesLeft = 6;
-	var guessStr = "You have " + guessesLeft + " tries left"; 
+ // Get elements
+  var showLives = document.getElementById("mylives");
+  var showCatagory = document.getElementById("scatagory");
+  var getHint = document.getElementById("hint");
+  var showClue = document.getElementById("clue");
 
-	for(var i = 0; i < word.length; i++) { answerArray[i] = "_";
-	}
-	var remainingLetters = wordList.length;
-	// The game loop
-	while (remainingLetters > 0) {
-	// Show the player their progress
-	alert(answerArray.join(" "));
+// create alphabet ul
+  var buttons = function () {
+    myButtons = document.getElementById('buttons');
+    letters = document.createElement('ul');
 
-	// var guess = prompt("Guess a letter");
-	if (userGuess === null){
-		break;
-	} else if(userGuess.length !==1) {
-		alert
-	}else{
-		for(var j = 0; j < wordList.length; j++) {
-			if (word[j] === userGuess) {
-				answerArray[j] = userGuess;
-				remainingLetters--;
-				}
-			}
-		}
-	}
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.id = 'alphabet';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = alphabet[i];
+      check();
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
+    }
+  }
+    
+  // Select Catagory
+  var selectCat = function () {
+    if (chosenCategory === categories[0]) {
+      catagoryName.innerHTML = "Yankee Greats";
+    } else if (chosenCategory === categories[1]) {
+      catagoryName.innerHTML = "1990's Yankees";
+    } else if (chosenCategory === categories[2]) {
+      catagoryName.innerHTML = "Yankee Managers";
+    }
+  }  
 
-}; // Ends document.onkeyup()
+  // Create geusses ul
+   result = function () {
+    wordHolder = document.getElementById('hold');
+    correct = document.createElement('ul');
+
+    for (var i = 0; i < word.length; i++) {
+      correct.setAttribute('id', 'my-word');
+      guess = document.createElement('li');
+      guess.setAttribute('class', 'guess');
+      if (word[i] === "-") {
+        guess.innerHTML = "-";
+        space = 1;
+      } else {
+        guess.innerHTML = "_";
+      }
+
+      guesses.push(guess);
+      wordHolder.appendChild(correct);
+      correct.appendChild(guess);
+    }
+  }
+  // Show lives
+   comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+  }
+
+ 
+
+
+
+
+
+
+
+
+	
+
+	
