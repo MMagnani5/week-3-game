@@ -30,7 +30,64 @@ h1{
  
 }
 
+#alphabet li{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:15px;
+  background-color: blue;
+  color:white;
+  border: solid 1px white;
+  font-size: 25px;
 
+
+}
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:15px;
+}
+#catagoryName{
+  font-size: 25px;
+  text-align: center;
+}
+#clue{
+  font-size: 25px;
+  text-align: center;
+}
+
+#mylives{
+  font-size: 25px;
+  text-align: center;
+}
+button{
+   background-color:#008CBA;
+   color: white;
+   font-size: 40px;
+   
+ }
+
+button:hover{
+     
+      background:white;
+      border: solid 1px $white;
+      color:blue;
+    }
+#hold{
+  text-align: center;
+}
 
 
 
