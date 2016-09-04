@@ -17,7 +17,7 @@ window.onload = function () {
 
  // Get elements
   var showLives = document.getElementById("mylives");
-  var showCatagory = document.getElementById("scatagory");
+  var showCategory = document.getElementById("category");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
 
@@ -136,22 +136,22 @@ window.onload = function () {
 
 
       hints = [
-        ["Was Traded from Boston", "He has 10 world series rings","Most homer by a switch hitter", "56 game hitting streak", "most consecutive games played by a Yankee"],
+        ["Was Traded from Boston", "He has 10 world series rings", "Most homer by a switch hitter", "56 game hitting streak", "Most consecutive games played by a Yankee"],
         ["Won the rookie of the year in 1996", "All time leader in Saves", "AL Batting Champ in 1998", "Hit 400 in his 1st playoff appearance"],
         ["Made 12 postseason appearance", "Won the 1977 World Series", "Won five consecutive World Series 1949–1953", "Manager during the 1995 strike"]
       ];
 
-    var catagoryIndex = categories.indexOf(chosenCategory);
+    var categoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
-     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
-      console.log("clue");  
+     showClue.innerHTML = "Clue: - " +  hints [categoryIndex][hintIndex];
+      
      };
 // Reset
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
+    showClue.innerHTML = "" ;
     play();
   }
 }
