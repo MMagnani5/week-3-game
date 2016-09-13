@@ -6,7 +6,7 @@ window.onload = function () {
   
   var categories;         // Array of topics
   var chosenCategory;     // Selected category
-  var getHint ;          // Word getHint
+  var getHint  ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Guess
   var guesses = [ ];      // Stored guesses
@@ -132,7 +132,7 @@ window.onload = function () {
   
   // Hint
 
-    hint.onclick = function() {
+    hint.onclick = function(){
 
 
       hints = [
@@ -143,15 +143,15 @@ window.onload = function () {
 
     var categoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
-     showClue.innerHTML = "Clue: - " +  hints [categoryIndex][hintIndex];
+     showClue.innerHTML = "Clue: - " + hints[categoryIndex][hintIndex];
       
-     };
+  };
 // Reset
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "" ;
+    showClue.innerHTML = "";
     play();
   }
 }
